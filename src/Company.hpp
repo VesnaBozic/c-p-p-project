@@ -13,19 +13,17 @@ private:
     string name;
     string identificationNumber;
     string pib;
-    string deleted;
     vector <Department*> departments;
 public:
     Company();
-    Company(string name, string identificationNumber, string pib, string deleted);
+    Company(string name, string identificationNumber, string pib);
     string getName();
     void setName(string name);
     string getIdentificationNumber();
     void setIndetificationNumber(string identificationNumber);
     string getPib();
     void setPib(string pib);
-    string getDeleted();
-    void setDeleted(string deleted);
+
     
     void details();
     void addDepartment(Department *department);

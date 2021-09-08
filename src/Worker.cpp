@@ -1,7 +1,7 @@
 #include "Worker.hpp"
 
 Worker::Worker(){};
-Worker::Worker::Worker(string name, string surname, double salary, Worker *superior = nullptr, string deleted ="ne") : name(name), surname(surname), salary(salary), superior(superior), deleted(deleted){};
+Worker::Worker::Worker(string name, string surname, double salary, string deleted ="ne") : name(name), surname(surname), salary(salary), deleted(deleted){};
 string Worker::getName()
 {
     return name;
@@ -17,14 +17,6 @@ string Worker::getSurname()
 void Worker::setSurname(string surname)
 {
     this->surname = surname;
-};
-Worker *Worker::getSuperior()
-{
-    return superior;
-};
-void Worker::setSuperior(Worker *superior)
-{
-    this->superior =superior;
 };
 
 double Worker::getSalary()
@@ -50,7 +42,7 @@ string Worker::getType()
 };
 
 void Worker::write(ostream &output){
-    output<<getType()<<"#"<<name<<"#"<<surname<<"#"<<salary<<"#"<<superior<<"#"<<deleted<<"#";
+    output<<getType()<<"#"<<name<<"#"<<surname<<"#"<<salary<<"#"<<deleted<<endl;
 };
 
 

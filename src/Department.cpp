@@ -1,7 +1,7 @@
 #include "Department.hpp"
 
 Department::Department(){};
-Department::Department(string name, Worker *headOfDepartment, string deleted="ne") : name(name), headOfDepartment(headOfDepartment), deleted(deleted){};
+Department::Department(string name, Worker *headOfDepartment) : name(name), headOfDepartment(headOfDepartment){};
 string Department::getName()
 {
     return name;
@@ -27,14 +27,6 @@ void Department::hireWorkera(Worker *Worker)
     employees.push_back(Worker);
 };
 
-string Department::getDeleted(){
-    return deleted;
-}
-
-void Department::setDeleted(string deleted){
-    this->deleted = deleted;
-}
-
 void Department::fireWorkera(int index)
 {
     bool notExist = false;
@@ -55,9 +47,9 @@ void Department::fireWorkera(int index)
 };
 
 void Department::write(ostream &output){
-    output<<getType()<<"#"<<name<<"#";
+    output<<getType()<<"#"<<name<<endl;
     headOfDepartment->write(output);
-    output<<"#"<<deleted<<endl;
+    
     for (Worker *r: employees){
         r->write(output);
     }

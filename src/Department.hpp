@@ -13,19 +13,18 @@ private:
     string name;
     Worker *headOfDepartment;
     vector<Worker*> employees;
-    string deleted;
+    
 
     
 
 public:
     Department();
-    Department(string name, Worker *headOfDepartment, string deleted);
+    Department(string name, Worker *headOfDepartment );
     string getName();
     void setName(string name);
     Worker *getHeadOfDepartment();
     void setHeadOfDepartment(Worker *Worker);
-    string getDeleted();
-    void setDeleted(string deleted);
+
     virtual string getType();
     void hireWorkera(Worker *Worker);
     void fireWorkera(int index);

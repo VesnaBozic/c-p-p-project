@@ -10,18 +10,15 @@ protected:
     string name;
     string surname;
     double salary;
-    Worker *superior;
     string deleted;
 
 public:
     Worker();
-    Worker(string name, string surname, double salary, Worker *superior, string deleted);
+    Worker(string name, string surname, double salary, string deleted);
     string getName();
     void setName(string name);
     string getSurname();
     void setSurname(string surname);
-    Worker *getSuperior();
-    void setSuperior(Worker *superior);
     string getDeleted();
     void setObrisan(string deleted);
 

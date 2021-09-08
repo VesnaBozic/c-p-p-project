@@ -13,7 +13,7 @@ private:
 
 public:
     Driver();
-    Driver(string name, string surname, double salary, Worker *superior, string deleted, string category, int foulNumber);
+    Driver(string name, string surname, double salary, string deleted, string category, int foulNumber);
     string getCategory();
     void setCategory(string category);
     int getFoulNumber();

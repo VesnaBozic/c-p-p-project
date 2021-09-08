@@ -1,7 +1,7 @@
 #include "Driver.hpp"
 
 Driver::Driver() : Worker(){};
-Driver::Driver(string name, string surname, double salary, Worker *superior, string deleted, string category, int foulNumber) : Worker(name, surname, foulNumber, superior, deleted), category(category), foulNumber(foulNumber){};
+Driver::Driver(string name, string surname, double salary, string deleted, string category, int foulNumber) : Worker(name, surname, foulNumber, deleted), category(category), foulNumber(foulNumber){};
 
 string Driver::getCategory()
 {
@@ -24,8 +24,9 @@ string Driver::getType()
     return "Driver";
 };
 void Driver::write(ostream &output){
-    Worker::write(output);
-    output<<category<<"#"<<foulNumber<<endl;
+    
+    output<<getType()<<"#"<<name<<"#"<<surname<<"#"<<salary<<"#"<<deleted<<"#"<<category<<"#"<<foulNumber<<endl;
+    
 };
 
 Driver::~Driver(){};

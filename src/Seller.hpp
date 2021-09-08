@@ -13,7 +13,7 @@ private:
 
 public:
     Seller();
-    Seller(string name, string surname, double salary, Worker *superior,string deleted, string cashRegister);
+    Seller(string name, string surname, double salary, string deleted, string cashRegister);
     string getCashRegister();
     void setCashRegister(string cashRegister);
 

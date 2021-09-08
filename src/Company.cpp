@@ -1,7 +1,7 @@
 #include "Company.hpp"
 
 Company::Company(){};
-Company::Company(string name, string identificationNumber, string pib, string deleted="ne") : name(name), identificationNumber(identificationNumber), pib(pib), deleted(deleted){};
+Company::Company(string name, string identificationNumber, string pib) : name(name), identificationNumber(identificationNumber), pib(pib){};
 string Company::getName()
 {
     return name;
@@ -26,13 +26,7 @@ void Company::setPib(string pib)
 {
     this->pib = pib;
 };
-string Company::getDeleted(){
-    return deleted;
-}
 
-void Company::setDeleted(string deleted){
-    this->deleted=deleted;
-}
 
 void Company::addDepartment(Department *Department)
 {
@@ -61,14 +55,14 @@ string Company::getType()
     return "Company";
 };
 void Company::write(ostream &output){
-    output<<getType()<<"#"<<name<<"#"<<identificationNumber<<"#"<<pib<<"#"<<deleted<<endl;
+    output<<getType()<<"#"<<name<<"#"<<identificationNumber<<"#"<<pib<<"#"<<endl;
     for(Department *d : departments){
         d->write(output);
     }
 };
 
 void Company::details(){
-    cout<<getType()<<"#"<<name<<"#"<<identificationNumber<<"#"<<pib<<"#"<<deleted<<endl;
+    cout<<getType()<<"#"<<name<<"#"<<identificationNumber<<"#"<<pib<<endl;
 }
 
 Company::~Company(){};
