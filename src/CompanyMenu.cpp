@@ -16,7 +16,7 @@ void companyMenu(){
    newCompany->details();
    cout<< "-------------------------------------"<<endl;
    cout<< "Choose what you want to do: "<<endl;
-   cout << "1. Change company details"<<endl;
+   cout << "1. Update company details"<<endl;
    cout << "2. Go back"<<endl;
    cout << "-------------------------------------"<<endl;
    cout << "Enter 1 or 2"<<endl;
@@ -37,10 +37,10 @@ void companyMenu(){
    {
     case 1:
             cout<< "Choose what you want to do: "<<endl;
-            cout << "1. Change company name."<<endl;
-            cout << "2. Change company indentification number."<<endl;
-            cout << "3. Change company pib."<<endl;
-            cout << "4. Change all company data."<<endl;
+            cout << "1. Update company name."<<endl;
+            cout << "2. Update company indentification number."<<endl;
+            cout << "3. Update company pib."<<endl;
+            cout << "4. Update all company data."<<endl;
             cout << "5. Go back."<<endl;
             cout << "-------------------------------------"<<endl;
             cout << "Enter option."<<endl;
@@ -59,6 +59,7 @@ void companyMenu(){
                 switch (choice2)
                 {
                 case 1:
+                    //update company name
                     cout << "-------------------------------------"<<endl;
                     cout <<"Please enter new company name: "<<endl;
                     cin >> companyName;
@@ -69,6 +70,7 @@ void companyMenu(){
                     companyMenu();
                     break;
                 case 2:
+                    //update companu identification number
                     cout << "-------------------------------------"<<endl;
                     cout <<"Please enter new company identification number: "<<endl;
                     cin >> identificationNumber;
@@ -79,6 +81,7 @@ void companyMenu(){
                     companyMenu();
                     break;
                 case 3:
+                    //update pib
                     cout << "-------------------------------------"<<endl;
                     cout <<"Please enter new company pib: "<<endl;
                     cin >> pib;
@@ -89,6 +92,7 @@ void companyMenu(){
                     companyMenu();
                     break;
                 case 4:
+                    //update all company data
                     cout << "-------------------------------------"<<endl;
                     cout <<"Please enter new company name: "<<endl;
                     cin >> companyName;
@@ -142,6 +146,8 @@ void departmentMenu(){
     file >> newCompany;
     file.close();
     string name;
+    string departmentName;
+    Department *newDepartment;
 
     ofstream out;
     system("cls");
@@ -152,6 +158,7 @@ void departmentMenu(){
     cout<< "-------------------------------------"<<endl;
     cout<< "Please choose option: "<<endl;
     int choice3;
+    
     cin >> choice3;
     if (choice3 == 0){
         system("cls");
@@ -165,6 +172,7 @@ void departmentMenu(){
         switch (choice3)
         {
             case 1:
+                //list od all departments
                 system("cls");
                 cout<< "Here are the list of all departments of the company: "<<endl;
                 newCompany->departmentDetails();
@@ -183,8 +191,8 @@ void departmentMenu(){
                     newCompany->getDepartment(choice4-1);
                     system("cls");
                     cout<< "Choose what you want to do: "<<endl;
-                    cout << "1. Change department name."<<endl;
-                    cout << "2. Change head of department."<<endl;
+                    cout << "1. Update department name."<<endl;
+                    cout << "2. Update head of department."<<endl;
                     cout << "3. See list of employees."<<endl;
                     cout << "4. Delete department."<<endl;
                     cout << "5. Go back."<<endl;
@@ -205,6 +213,7 @@ void departmentMenu(){
                         switch (choice3)
                         {
                         case 1:
+                            //update company name
                             system("cls");
                             cout << "-------------------------------------"<<endl;
                             cout << "Enter new department name: "<<endl;
@@ -216,13 +225,13 @@ void departmentMenu(){
                             departmentMenu();
                             break;
                         case 2:
+                            // update head of department
                             system("cls");
                             cout << "-------------------------------------"<<endl;
                             cout << "Choose new head of department: "<<endl;
                             cout << "-------------------------------------"<<endl;
                             newCompany->departmentEmployeesDetails(choice4-1);
                             cout << "Enter number: "<<endl;
-                            
                             int choice7;
                             cin >> choice7;
                             if (choice7 == 0){
@@ -244,15 +253,48 @@ void departmentMenu(){
                             }
                             break;
                         case 3:
-                            //lista zaposlenih u odjeljenju
+                            //employees list
                             cout << "-------------------------------------"<<endl;
                             cout<< "Here are all employees in your department: "<<endl;
                             newCompany->departmentEmployeesDetails(choice4-1);
                             employeesMenu(choice7-1);
                             break;
                         case 4:
-                            //brisanje odjeljenja
+                            //deleting department
                             cout << "-------------------------------------"<<endl;
+                            cout << "Are you sure that you want to delete this department ?"<<endl;
+                            cout<<"1. Yes"<<endl;
+                            cout<<"2. Go back"<<endl;
+                            int choice8;
+                            cin >> choice8;
+                            if (choice8 == 0){
+                                system("cls");
+                                cout << "-------------------------------------"<<endl;
+                                cout<< "Wrong selection please try again!"<<endl;
+                                cout << "-------------------------------------"<<endl;
+                                cin.clear();
+                                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                                } 
+                            else {
+                                switch (choice8)
+                                {
+                                case 1:
+                                    /* napravi metodu u departments kojom ces deleted da promjenis u jes
+                                    , a u ucitavanju podataka ukoliko neki objekat ima deleted atribut yes ne
+                                    prikazivati ga */
+                                    break;
+                                case 2:
+                                    departmentMenu();
+                                    break;
+                                
+                                default:
+                                    cout << "-------------------------------------"<<endl;
+                                    cout<< "Wrong selection please try again!"<<endl;
+                                    cout << "-------------------------------------"<<endl;
+                                    break;
+                                }
+                            }
+
                             break;
                         case 5:
                             departmentMenu();
@@ -270,7 +312,18 @@ void departmentMenu(){
                             }
                     break;
                 case 2:
-                    //dodavnje novog odeljenja
+                    //adding new department
+                    
+                     cout << "-------------------------------------"<<endl;
+                     cout<<" Enter department name: "<<endl;
+                     cin >> departmentName;
+                     newDepartment = new Department(departmentName, nullptr);
+                     newCompany->addDepartment(newDepartment);
+                     out.open("company.csv");
+                     out<<newCompany;
+                     out.close();
+                     departmentMenu();
+                     
                     break;
                 case 3:
                     menu();

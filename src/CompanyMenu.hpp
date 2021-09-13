@@ -7,6 +7,7 @@ using namespace std;
 #include "Utils.hpp"
 #include "Menu.hpp"
 #include "EmployeesMenu.hpp"
+#include "Department.hpp"
 
 
 void companyMenu();
