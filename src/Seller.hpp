@@ -19,6 +19,7 @@ public:
 
     virtual string getType();
     virtual void write(ostream &output);
+    virtual void details();
     
     virtual ~Seller();
 };

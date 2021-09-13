@@ -8,10 +8,16 @@ string Storekeeper::getType()
 {
     return "Storekeeper";
 };
+void Storekeeper::details(){
+    Worker::details();
+    cout<<endl;
 
+}
 void Storekeeper::write(ostream &output)
 {
     Worker::write(output);
+    
+
     
 };
 

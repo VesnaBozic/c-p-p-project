@@ -14,6 +14,7 @@ public:
 
    
     virtual string getType();
+    virtual void details();
     
     virtual void write(ostream &output);
     

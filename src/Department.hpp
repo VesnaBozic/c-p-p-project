@@ -24,11 +24,12 @@ public:
     void setName(string name);
     Worker *getHeadOfDepartment();
     void setHeadOfDepartment(Worker *Worker);
-
+    void changeHeadOfDepartment(int index);
     virtual string getType();
     void hireWorkera(Worker *Worker);
     void fireWorkera(int index);
-
+    void details();
+    void employeesDetails();
 
     virtual void write(ostream &output);
     

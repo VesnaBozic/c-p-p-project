@@ -41,8 +41,12 @@ string Worker::getType()
     return "Worker";
 };
 
+void Worker::details(){
+    cout<< name <<" "<<surname <<", Plata: "<<salary<<", Pozicija:"<<getType();
+}
+
 void Worker::write(ostream &output){
-    output<<getType()<<"#"<<name<<"#"<<surname<<"#"<<salary<<"#"<<deleted<<endl;
+    output<<"Worker"<<"#"<<getType()<<"#"<<name<<"#"<<surname<<"#"<<salary<<"#"<<deleted;
 };
 
 

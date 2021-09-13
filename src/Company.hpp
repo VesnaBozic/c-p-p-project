@@ -9,6 +9,8 @@ using namespace std;
 
 class Company
 {
+public:
+
 private:
     string name;
     string identificationNumber;
@@ -23,14 +25,19 @@ public:
     void setIndetificationNumber(string identificationNumber);
     string getPib();
     void setPib(string pib);
+    
 
     
     void details();
+    void departmentDetails();
     void addDepartment(Department *department);
     void removeDepartment(int index);
     virtual string getType();
     virtual void write(ostream &output);
-
+    void getDepartment(int index);
+    void changeDepartmantName(int index, string name);
+    void changeHeadofDepart(int index, int employee);
+    void departmentEmployeesDetails(int index);
     friend ostream &operator<<(ostream &output, Company *company);
     friend istream &operator>>(istream &input, Company* &company);
 

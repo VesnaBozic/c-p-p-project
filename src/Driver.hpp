@@ -5,7 +5,7 @@
 using namespace std;
 #include "Worker.hpp"
 
-class Driver:public Worker
+class Driver: public Worker
 {
 private:
    string category;
@@ -19,6 +19,7 @@ public:
     int getFoulNumber();
     void setFoulNumber(int foulNumber);
     virtual string getType();
+    virtual void details();
     virtual void write(ostream &output);
    
     virtual ~Driver();

@@ -25,6 +25,7 @@ public:
     double getSalary();
     void setSalary(double salary);
     virtual string getType() = 0;
+    virtual void details() = 0;
     virtual void write(ostream &output);
     
     virtual ~Worker();

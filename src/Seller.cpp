@@ -15,9 +15,14 @@ string Seller::getType()
 {
     return "Seller";
 };
+
+void Seller::details(){
+    Worker::details();
+    cout<<", Kasa: "<<cashRegister<<endl;
+}
 void Seller::write(ostream &output){
-   
-    output<<getType()<<"#"<<name<<"#"<<surname<<"#"<<salary<<"#"<<deleted<<"#"<<cashRegister<<endl;
+    Worker::write(output);
+    output<<"#"<<cashRegister;
 };
 
 Seller::~Seller(){};

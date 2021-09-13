@@ -23,9 +23,15 @@ string Driver::getType()
 {
     return "Driver";
 };
+
+void Driver::details(){
+    Worker::details();
+    cout<<" ,Licence: "<<category<<", Number of traffic violations:  "<<foulNumber<<endl;
+}
+
 void Driver::write(ostream &output){
-    
-    output<<getType()<<"#"<<name<<"#"<<surname<<"#"<<salary<<"#"<<deleted<<"#"<<category<<"#"<<foulNumber<<endl;
+    Worker::write(output);
+    output<<"#"<<category<<"#"<<foulNumber;
     
 };
 

@@ -9,6 +9,7 @@ string Company::getName()
 void Company::setName(string name)
 {
     this->name = name;
+    
 };
 string Company::getIdentificationNumber()
 {
@@ -55,14 +56,80 @@ string Company::getType()
     return "Company";
 };
 void Company::write(ostream &output){
-    output<<getType()<<"#"<<name<<"#"<<identificationNumber<<"#"<<pib<<"#"<<endl;
+    output<<getType()<<"#"<<name<<"#"<<identificationNumber<<"#"<<pib<<endl;
     for(Department *d : departments){
         d->write(output);
     }
 };
 
 void Company::details(){
-    cout<<getType()<<"#"<<name<<"#"<<identificationNumber<<"#"<<pib<<endl;
+    cout<< "-------------------------------------"<<endl;
+    cout<<"Company name: "<<name<<endl;
+    cout<<"Identification number: "<<identificationNumber<<endl;
+    cout<<"Pib :"<<pib<<endl;
+    cout<< "-------------------------------------"<<endl;
 }
+
+void Company::departmentDetails(){
+    int counter = 1;
+    for(Department *d: departments){
+        cout<<counter<<". "<<d->getName()<<endl;
+        counter++;
+    }
+    
+}
+
+void Company::departmentEmployeesDetails(int index){
+      int counter = 0;
+     
+      for(Department *d: departments){
+          
+          if(index==counter) {
+            
+            d->employeesDetails(); }
+           counter++; 
+    }
+    
+}
+
+void Company::getDepartment(int index){
+     int counter = 0;
+      for(Department *d: departments){
+        if(index == counter) {
+            cout<<"Department name: "<<d->getName()<<endl;
+           
+        }
+        counter++;
+    }
+    
+}
+
+void Company::changeDepartmantName(int index, string name){
+    int counter = 0;
+      for(Department *d: departments){
+        if(index == counter) {
+            d->setName(name);
+           
+        }
+        counter++;
+    }
+
+}
+
+
+void Company::changeHeadofDepart(int index, int employee){
+    int counter = 0;
+      for(Department *d: departments){
+        if(index == counter) {
+            d->changeHeadOfDepartment(employee);
+            
+           
+        }
+        counter++;
+    }
+
+}
+
+
 
 Company::~Company(){};
