@@ -95,15 +95,18 @@ void Company::departmentEmployeesDetails(int index){
     
 }
 
-void Company::getDepartment(int index){
+bool Company::getDepartment(int index, bool check){
      int counter = 0;
+   
       for(Department *d: departments){
         if(index == counter) {
             cout<<"Department name: "<<d->getName()<<endl;
+            check = true;
            
         }
         counter++;
     }
+  return check;
     
 }
 
@@ -137,17 +140,17 @@ void Company::deleteDepartment(int index){
     }
 }
 
-void Company::changeHeadofDepart(int index, int employee){
+bool Company::changeHeadofDepart(int index, int employee, bool check){
     int counter = 0;
       for(Department *d: departments){
         if(index == counter) {
             d->changeHeadOfDepartment(employee);
-            
+            check = true;
            
         }
         counter++;
     }
-
+    return check;
 }
 
 

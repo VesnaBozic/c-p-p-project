@@ -1,5 +1,5 @@
-#ifndef COMPANY_MENU_HPP
-#define COMPANY_MENU_HPP
+#ifndef DEPARTMENT_MENU_HPP
+#define DEPARTMENT_MENU_HPP
 #include <iostream>
 #include <string>
 using namespace std;
@@ -11,7 +11,7 @@ using namespace std;
 #include<limits>
 
 
-void companyMenu();
-// void departmentMenu();
+
+void departmentMenu();
 
 #endif

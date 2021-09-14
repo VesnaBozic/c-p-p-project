@@ -4,7 +4,6 @@
 
 
 void menu(){
-    system("cls");
     cout << "-------------------------------------"<<endl;
     cout << "*Welcome to employees menagement system*"<<endl;
     cout << "-------------------------------------"<<endl;

@@ -4,6 +4,7 @@
 #include <string>
 using namespace std;
 #include "CompanyMenu.hpp"
+#include "DepartmentMenu.hpp"
 
 
 

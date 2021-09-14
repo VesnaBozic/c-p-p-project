@@ -34,9 +34,9 @@ public:
     void removeDepartment(int index);
     virtual string getType();
     virtual void write(ostream &output);
-    void getDepartment(int index);
+    bool getDepartment(int index, bool check);
     void changeDepartmantName(int index, string name);
-    void changeHeadofDepart(int index, int employee);
+    bool changeHeadofDepart(int index, int employee, bool check);
     void departmentEmployeesDetails(int index);
     void deleteDepartment(int index);
     friend ostream &operator<<(ostream &output, Company *company);
