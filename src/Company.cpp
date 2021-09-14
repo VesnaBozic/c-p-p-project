@@ -73,9 +73,12 @@ void Company::details(){
 void Company::departmentDetails(){
     int counter = 1;
     for(Department *d: departments){
+     
+        
+
         cout<<counter<<". "<<d->getName()<<endl;
-        counter++;
-    }
+        counter++;}
+    
     
 }
 
@@ -116,6 +119,23 @@ void Company::changeDepartmantName(int index, string name){
 
 }
 
+void Company::deleteDepartment(int index){
+   bool notExist = false;
+    for (int i = 0; i < departments.size(); i++)
+    {
+        if (i == index)
+        {
+            departments.erase(departments.begin() + index);
+
+            notExist = true;
+        }
+    }
+
+    if (!notExist)
+    {
+        cout << "Worker doesn't exist!" << endl;
+    }
+}
 
 void Company::changeHeadofDepart(int index, int employee){
     int counter = 0;

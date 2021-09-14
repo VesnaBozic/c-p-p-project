@@ -246,7 +246,7 @@ void departmentMenu(){
                               
                                 newCompany->changeHeadofDepart(choice4-1,choice7-1);
                                 out.open("company.csv");
-                                out<<newCompany;
+                                out<<newCompany; 
                                 out.close();
                                 departmentMenu();
                                 break;
@@ -279,9 +279,12 @@ void departmentMenu(){
                                 switch (choice8)
                                 {
                                 case 1:
-                                    /* napravi metodu u departments kojom ces deleted da promjenis u jes
-                                    , a u ucitavanju podataka ukoliko neki objekat ima deleted atribut yes ne
-                                    prikazivati ga */
+                                    newCompany->deleteDepartment(choice4-1);
+                                    out.open("company.csv");
+                                    out<<newCompany; 
+                                    out.close();
+                                    departmentMenu();
+                                    
                                     break;
                                 case 2:
                                     departmentMenu();
@@ -317,7 +320,7 @@ void departmentMenu(){
                      cout << "-------------------------------------"<<endl;
                      cout<<" Enter department name: "<<endl;
                      cin >> departmentName;
-                     newDepartment = new Department(departmentName, nullptr);
+                     newDepartment = new Department(departmentName,"no", nullptr);
                      newCompany->addDepartment(newDepartment);
                      out.open("company.csv");
                      out<<newCompany;

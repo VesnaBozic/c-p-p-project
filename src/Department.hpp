@@ -12,6 +12,7 @@ class Department
 private:
     string name;
     Worker *headOfDepartment;
+    string deleted;
     vector<Worker*> employees;
     
 
@@ -19,9 +20,11 @@ private:
 
 public:
     Department();
-    Department(string name, Worker *headOfDepartment );
+    Department(string name, string deleted, Worker *headOfDepartment );
     string getName();
     void setName(string name);
+    string getDeleted();
+    void setDeleted(string deleted);
     Worker *getHeadOfDepartment();
     void setHeadOfDepartment(Worker *Worker);
     void changeHeadOfDepartment(int index);

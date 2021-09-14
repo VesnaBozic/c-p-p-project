@@ -1,7 +1,7 @@
 #include "Department.hpp"
 
 Department::Department(){};
-Department::Department(string name, Worker *headOfDepartment) : name(name), headOfDepartment(headOfDepartment){};
+Department::Department(string name, string deleted, Worker *headOfDepartment) : name(name),deleted(deleted), headOfDepartment(headOfDepartment){};
 string Department::getName()
 {
     return name;
@@ -10,6 +10,16 @@ void Department::setName(string name)
 {
     this->name = name;
 };
+
+string Department::getDeleted(){
+    return deleted;
+}
+
+void Department::setDeleted(string deleted){
+
+    this->deleted=deleted;
+}
+
 Worker *Department::getHeadOfDepartment()
 {
     return headOfDepartment;
@@ -79,7 +89,7 @@ void Department::employeesDetails(){
 
 void Department::write(ostream &output){
     
-    output<<getType()<<"#"<<name<<"#";
+    output<<getType()<<"#"<<name<<"#"<<deleted<<"#";
     
     if(headOfDepartment != nullptr){
     output<<"HeadOfDepartment"<<"#";

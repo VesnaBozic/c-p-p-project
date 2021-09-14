@@ -1,9 +1,5 @@
-Company#Kompanija#222#225
-Department#Department1#HeadOfDepartment#Worker#Storekeeper#Ime2#Prezime2#200#no
-Worker#Storekeeper#Ime2#Prezime2#200#no#Department1
-Worker#Seller#Ime1#Prezime1#400#no#kasa#Department1
-Department#Department2#HeadOfDepartment#Worker#Driver#Jovan#Jovanovic#2#no#b#2
+Company#Name#222#225
+Department#Department2#no#HeadOfDepartment#Worker#Seller#Igor#Jovic#400#no#kasa
 Worker#Driver#Jovan#Jovanovic#2#no#b#2#Department2
-Worker#Seller#Ime1s#Prezime1s#400#no#kasa#Department2
-Worker#Storekeeper#Ime2s#Prezime2s#200#no#Department2
-Department#Department3#none
+Worker#Seller#Igor#Jovic#400#no#kasa#Department2
+Worker#Storekeeper#Stefan#Stefanovic#200#no#Department2

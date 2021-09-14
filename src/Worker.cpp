@@ -1,7 +1,7 @@
 #include "Worker.hpp"
 
 Worker::Worker(){};
-Worker::Worker::Worker(string name, string surname, double salary, string deleted ="ne") : name(name), surname(surname), salary(salary), deleted(deleted){};
+Worker::Worker::Worker(string name, string surname, double salary, string deleted ="no") : name(name), surname(surname), salary(salary), deleted(deleted){};
 string Worker::getName()
 {
     return name;

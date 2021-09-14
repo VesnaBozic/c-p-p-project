@@ -38,6 +38,7 @@ public:
     void changeDepartmantName(int index, string name);
     void changeHeadofDepart(int index, int employee);
     void departmentEmployeesDetails(int index);
+    void deleteDepartment(int index);
     friend ostream &operator<<(ostream &output, Company *company);
     friend istream &operator>>(istream &input, Company* &company);
 
