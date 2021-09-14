@@ -7,7 +7,7 @@ void menu(){
     cout << "-------------------------------------"<<endl;
     cout << "*Welcome to employees menagement system*"<<endl;
     cout << "-------------------------------------"<<endl;
-    cout << "-Choose what you want to do:"<<endl;
+    cout << "Choose what you want to do:"<<endl;
     cout << "-------------------------------------"<<endl;
     cout << "1. See Company details."<<endl;
     cout << "2. See list of departments."<<endl;

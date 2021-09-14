@@ -3,11 +3,11 @@
 #include <iostream>
 #include <string>
 using namespace std;
-#include "Company.hpp"
-#include "Utils.hpp"
+#include "../classes/Company.hpp"
+#include "../utils/Utils.hpp"
 #include "Menu.hpp"
 #include "EmployeesMenu.hpp"
-#include "Department.hpp"
+#include "../classes/Department.hpp"
 #include<limits>
 
 

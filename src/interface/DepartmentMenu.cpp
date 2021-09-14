@@ -4,7 +4,7 @@
 void departmentMenu(){
    
     Company *newCompany;
-    ifstream file("company.csv");
+    ifstream file("data/company.csv");
     file >> newCompany;
     file.close();
     string name;
@@ -82,7 +82,7 @@ void departmentMenu(){
                             cout << "Enter new department name: "<<endl;
                             cin >> name;
                             newCompany->changeDepartmantName(choice4-1,name);
-                            out.open("company.csv");
+                            out.open("data/company.csv");
                             out<<newCompany;
                             out.close();
                             departmentMenu();
@@ -108,7 +108,7 @@ void departmentMenu(){
                             else {
                               
                                 if(newCompany->changeHeadofDepart(choice4-1,choice7-1, false)==true){
-                                out.open("company.csv");
+                                out.open("data/company.csv");
                                 out<<newCompany; 
                                 out.close();
                                 departmentMenu();
@@ -149,7 +149,7 @@ void departmentMenu(){
                                 {
                                 case 1:
                                     newCompany->deleteDepartment(choice4-1);
-                                    out.open("company.csv");
+                                    out.open("data/company.csv");
                                     out<<newCompany; 
                                     out.close();
                                     departmentMenu();
@@ -175,7 +175,7 @@ void departmentMenu(){
                         default:
                             system("cls");
                             cout << "-------------------------------------"<<endl;
-                            cout<< "Wrong selection please try again!";
+                            cout<< "Wrong selection please try again!"<<endl;
                             cout << "-------------------------------------"<<endl;
                             departmentMenu();
                             break; 
@@ -186,7 +186,7 @@ void departmentMenu(){
                     else {
                         system("cls");
                         cout << "-------------------------------------"<<endl;
-                        cout<< "Wrong selection please try again!";
+                        cout<< "Wrong selection please try again!"<<endl;
                         cout << "-------------------------------------"<<endl;
                         departmentMenu();
                         break; 
@@ -200,7 +200,7 @@ void departmentMenu(){
                      cin >> departmentName;
                      newDepartment = new Department(departmentName,"no", nullptr);
                      newCompany->addDepartment(newDepartment);
-                     out.open("company.csv");
+                     out.open("data/company.csv");
                      out<<newCompany;
                      out.close();
                      departmentMenu();
@@ -212,7 +212,7 @@ void departmentMenu(){
                 default:
                     system("cls");
                     cout << "-------------------------------------"<<endl;
-                    cout<< "Wrong selection please try again!";
+                    cout<< "Wrong selection please try again!"<<endl;
                     cout << "-------------------------------------"<<endl;
                     departmentMenu();
                     break;
