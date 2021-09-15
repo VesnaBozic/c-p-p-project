@@ -153,6 +153,18 @@ bool Company::changeHeadofDepart(int index, int employee, bool check){
     return check;
 }
 
+void Company::hireWorker(Worker *worker, int index){
+    int counter = 0;
+      for(Department *d: departments){
+        if(index == counter) {
+            d->hireWorkera(worker);
+            
+           
+        }
+        counter++;
+    }
+}
+
 
 
 Company::~Company(){};

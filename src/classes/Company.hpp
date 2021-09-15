@@ -39,6 +39,7 @@ public:
     bool changeHeadofDepart(int index, int employee, bool check);
     void departmentEmployeesDetails(int index);
     void deleteDepartment(int index);
+    void hireWorker(Worker *Worker, int index);
     friend ostream &operator<<(ostream &output, Company *company);
     friend istream &operator>>(istream &input, Company* &company);
 

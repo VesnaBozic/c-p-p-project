@@ -5,7 +5,13 @@
 using namespace std;
 #include "../classes/Company.hpp"
 #include "../utils/Utils.hpp"
-#include "Menu.hpp"
+#include "DepartmentMenu.hpp"
+#include "../classes/Department.hpp"
+#include "../classes/Storekeeper.hpp"
+#include "../classes/Driver.hpp"
+#include "../classes/Seller.hpp"
+#include "../classes/Worker.hpp"
+
 
 
 void employeesMenu(int index);

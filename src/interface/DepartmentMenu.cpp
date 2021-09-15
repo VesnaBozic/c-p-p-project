@@ -14,7 +14,7 @@ void departmentMenu(){
     ofstream out;
     
     cout<< "-------------------------------------"<<endl;
-    cout<<"1. Departments."<<endl;
+    cout<<"1. See list of departments."<<endl;
     cout<<"2. Add new department."<<endl;
     cout<<"3. Go back."<<endl;
     cout<< "-------------------------------------"<<endl;
@@ -56,7 +56,7 @@ void departmentMenu(){
                     cout<< "Choose what you want to do: "<<endl;
                     cout << "1. Update department name."<<endl;
                     cout << "2. Update head of department."<<endl;
-                    cout << "3. See list of employees."<<endl;
+                    cout << "3. Employees."<<endl;
                     cout << "4. Delete department."<<endl;
                     cout << "5. Go back."<<endl;
                     cout << "-------------------------------------"<<endl;
@@ -122,11 +122,9 @@ void departmentMenu(){
                             }
                             break;
                         case 3:
-                            //employees list
-                            cout << "-------------------------------------"<<endl;
-                            cout<< "Here are all employees in your department: "<<endl;
-                            newCompany->departmentEmployeesDetails(choice4-1);
-                            employeesMenu(choice7-1);
+                            //employees
+                            
+                            employeesMenu(choice4-1);
                             break;
                         case 4:
                             //deleting department

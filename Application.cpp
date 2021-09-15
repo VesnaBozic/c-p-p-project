@@ -17,33 +17,33 @@ using namespace std;
 
 
 int main(){
-    // Worker *driver = new Driver("Jovan", "Jovanovic",300.0, "no", "b",2);
-    // Worker *storekeeper = new Storekeeper("Petar", "Petrovic",2400.0,"no");
-    // Worker *seller = new Seller("Ana", "Anic", 400.0,"no", "kasa");
-    // Worker *storekeeper2 = new Storekeeper("Nikola", "Nikolic",200.0,"no");
-    // Worker *seller2 = new Seller("Igor", "Jovic", 400.0,"no", "kasa");
-    // Worker *storekeeper3 = new Storekeeper("Stefan", "Stefanovic",200.0,"no");
+    Worker *driver = new Driver("Jovan", "Jovanovic",300.0, "no", "b",2);
+    Worker *storekeeper = new Storekeeper("Petar", "Petrovic",2400.0,"no");
+    Worker *seller = new Seller("Ana", "Anic", 400.0,"no", "kasa");
+    Worker *storekeeper2 = new Storekeeper("Nikola", "Nikolic",200.0,"no");
+    Worker *seller2 = new Seller("Igor", "Jovic", 400.0,"no", "kasa");
+    Worker *storekeeper3 = new Storekeeper("Stefan", "Stefanovic",200.0,"no");
 
-    // Company *company = new Company("Name", "222","225");
+    Company *company = new Company("Name", "222","225");
     
-    // Department *department = new Department("Department1","no", seller);
-    // Department *department2 = new Department("Department2","no", storekeeper2);
-    // department->hireWorkera(storekeeper2);
-    // department->hireWorkera(seller);
-    // department2->hireWorkera(driver);
-    // department2->hireWorkera(seller2);
-    // department2->hireWorkera(storekeeper3);
-    // // department2->details();
-    // department2->setHeadOfDepartment(seller2);
-    // company->addDepartment(department);
-    // company->addDepartment(department2);
-    // // company->details();
-    // // company->departmentDetails();
+    Department *department = new Department("Department1","no", seller);
+    Department *department2 = new Department("Department2","no", storekeeper2);
+    department->hireWorkera(storekeeper2);
+    department->hireWorkera(seller);
+    department2->hireWorkera(driver);
+    department2->hireWorkera(seller2);
+    department2->hireWorkera(storekeeper3);
+    // department2->details();
+    department2->setHeadOfDepartment(seller2);
+    company->addDepartment(department);
+    company->addDepartment(department2);
+    // company->details();
+    // company->departmentDetails();
 
-    // ofstream out;
-    // out.open("data/company.csv");
-    // out<<company;
-    // out.close();
+    ofstream out;
+    out.open("data/company.csv");
+    out<<company;
+    out.close();
 
 
     

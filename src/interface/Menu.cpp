@@ -10,7 +10,7 @@ void menu(){
     cout << "Choose what you want to do:"<<endl;
     cout << "-------------------------------------"<<endl;
     cout << "1. See Company details."<<endl;
-    cout << "2. See list of departments."<<endl;
+    cout << "2. Departments."<<endl;
     cout << "3. Exit application."<<endl;
     cout << "-------------------------------------"<<endl;
     cout << "Enter your choice: "<<endl;
