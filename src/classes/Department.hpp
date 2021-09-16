@@ -4,7 +4,7 @@
 #include <string>
 using namespace std;
 #include "Worker.hpp"
-
+#include "Seller.hpp"
 #include <vector>
 
 class Department
@@ -28,9 +28,10 @@ public:
     Worker *getHeadOfDepartment();
     void setHeadOfDepartment(Worker *Worker);
     void changeHeadOfDepartment(int index);
+    void updateWorker(int employee,string newName, string newSurname, double newSalary);
     virtual string getType();
-    void hireWorkera(Worker *Worker);
-    void fireWorkera(int index);
+    void hireWorker(Worker *Worker);
+    void fireWorker(int index);
     void details();
     void employeesDetails();
 

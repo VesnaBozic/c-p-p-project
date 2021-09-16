@@ -83,21 +83,21 @@ istream &operator>>(istream &input, Company* &company)
            vector<string> parts = tokenization(line, "#");
                if(parts[0] == "Storekeeper"){
                Worker *storekeeper = new Storekeeper(parts[1], parts[2],stod(parts[3]),parts[4]);  
-               department->hireWorkera(storekeeper);
+               department->hireWorker(storekeeper);
               
 
             }
             else if (parts[0] == "Seller"){
             
                Worker *seller = new Seller(parts[1], parts[2],stod(parts[3]),parts[4], parts[5]);  
-               department->hireWorkera(seller);
+               department->hireWorker(seller);
                
             }
             else if (parts[0]== "Driver") {
 
               
                Worker *driver = new Driver(parts[1], parts[2],stod(parts[3]),parts[4], parts[5],stoi(parts[6]));  
-                department->hireWorkera(driver);
+                department->hireWorker(driver);
             }
           
             

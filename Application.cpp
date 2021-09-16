@@ -28,11 +28,11 @@ int main(){
     
     Department *department = new Department("Department1","no", seller);
     Department *department2 = new Department("Department2","no", storekeeper2);
-    department->hireWorkera(storekeeper2);
-    department->hireWorkera(seller);
-    department2->hireWorkera(driver);
-    department2->hireWorkera(seller2);
-    department2->hireWorkera(storekeeper3);
+    department->hireWorker(storekeeper2);
+    department->hireWorker(seller);
+    department2->hireWorker(driver);
+    department2->hireWorker(seller2);
+    department2->hireWorker(storekeeper3);
     // department2->details();
     department2->setHeadOfDepartment(seller2);
     company->addDepartment(department);

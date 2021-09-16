@@ -21,6 +21,7 @@ public:
     virtual string getType();
     virtual void details();
     virtual void write(ostream &output);
+    virtual void changeWorker(string newName, string newSurname, double newSalary);
    
     virtual ~Driver();
 };

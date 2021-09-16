@@ -34,5 +34,8 @@ void Driver::write(ostream &output){
     output<<"#"<<category<<"#"<<foulNumber;
     
 };
+void Driver::changeWorker(string newName, string newSurname, double newSalary){
+    Worker::changeWorker(newName, newSurname,newSalary);
 
+};
 Driver::~Driver(){};

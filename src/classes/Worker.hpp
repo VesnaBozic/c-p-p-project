@@ -27,6 +27,7 @@ public:
     virtual string getType() = 0;
     virtual void details() = 0;
     virtual void write(ostream &output);
+    virtual void changeWorker(string newNmae, string newSurname, double newSalary);
     
     virtual ~Worker();
 };

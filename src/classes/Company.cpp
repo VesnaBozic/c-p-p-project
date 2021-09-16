@@ -95,6 +95,18 @@ void Company::departmentEmployeesDetails(int index){
     
 }
 
+ void Company::updateWorkerData(int index, int employee, string name, string surname, double salary){
+      int counter = 0;
+     
+      for(Department *d: departments){
+          
+          if(index==counter) {
+            
+            d->updateWorker(employee,name,surname,salary);}
+           counter++; 
+    }
+ };
+
 bool Company::getDepartment(int index, bool check){
      int counter = 0;
    
@@ -140,6 +152,19 @@ void Company::deleteDepartment(int index){
     }
 }
 
+void Company::deleteWorker(int index, int employee){
+     int counter = 0;
+      for(Department *d: departments){
+        if(index == counter) {
+            d->fireWorker(employee);
+            
+           
+        }
+        counter++;
+    }
+
+}
+
 bool Company::changeHeadofDepart(int index, int employee, bool check){
     int counter = 0;
       for(Department *d: departments){
@@ -157,7 +182,7 @@ void Company::hireWorker(Worker *worker, int index){
     int counter = 0;
       for(Department *d: departments){
         if(index == counter) {
-            d->hireWorkera(worker);
+            d->hireWorker(worker);
             
            
         }

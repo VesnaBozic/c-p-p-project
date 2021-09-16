@@ -32,19 +32,19 @@ string Department::getType()
 {
     return "Department";
 };
-void Department::hireWorkera(Worker *Worker)
+void Department::hireWorker(Worker *Worker)
 {
     employees.push_back(Worker);
 };
 
-void Department::fireWorkera(int index)
+void Department::fireWorker(int index)
 {
     bool notExist = false;
     for (int i = 0; i < employees.size(); i++)
     {
-        if (i == index - 1)
+        if (i == index)
         {
-            employees.erase(employees.begin() + index - 1);
+            employees.erase(employees.begin() + index);
 
             notExist = true;
         }
@@ -54,6 +54,19 @@ void Department::fireWorkera(int index)
     {
         cout << "Worker doesn't exist!" << endl;
     }
+};
+
+void Department::updateWorker(int employee, string newName, string newSurname, double newSalary){
+     int counter = 0;
+    for (Worker *w: employees) {
+        if(employee == counter) {
+            w->changeWorker(newName,newSurname,newSalary);
+        }
+        counter++;
+    } 
+
+    
+
 };
 
 void Department::changeHeadOfDepartment(int employee){
@@ -85,6 +98,8 @@ void Department::employeesDetails(){
         counter++;
     }
 }
+
+
 
 
 void Department::write(ostream &output){

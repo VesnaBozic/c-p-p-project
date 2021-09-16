@@ -25,4 +25,10 @@ void Seller::write(ostream &output){
     output<<"#"<<cashRegister;
 };
 
+void Seller::changeWorker(string newName, string newSurname, double newSalary){
+    
+    Worker::changeWorker(newName, newSurname,newSalary);
+ 
+};
+
 Seller::~Seller(){};

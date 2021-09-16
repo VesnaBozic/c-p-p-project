@@ -16,6 +16,9 @@ void employeesMenu(int index){
         string cashRegister;
         string category;
         int foulNumber;
+        string updateName;
+        string updateSurname;
+        double updateSalary;
         
         
         
@@ -43,11 +46,135 @@ void employeesMenu(int index){
             {
                 case 1:
                     /* list of employees, here add updating and deleting */
+                   system("cls");
                    cout<< "Here are all employees in your department: "<<endl;
                    newCompany2->departmentEmployeesDetails(index);
+                   cout<< "Please choose employee: "<<endl;
+                   int choice4;
+                   cin >> choice4;
+                   if (choice4 == 0){
+                        system("cls");
+                        cout << "-------------------------------------"<<endl;
+                        cout<< "Wrong selection please try again!"<<endl;
+                        cout << "-------------------------------------"<<endl;
+                        cin.clear();
+                        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                        employeesMenu(index);}
+                else {
+
+                    cout<< "Choose what you want to do: "<<endl;
+                    cout << "1. Update employee data."<<endl;
+                    cout << "2. Delete employee."<<endl;
+                    cout << "3. Go back."<<endl;
+                    cout << "-------------------------------------"<<endl;
+                    cout << "Enter option."<<endl;
+                    int choice5;
+                    cin >> choice5;
+                    if (choice5 == 0){
+                        system("cls");
+                        cout << "-------------------------------------"<<endl;
+                        cout<< "Wrong selection please try again!"<<endl;
+                        cout << "-------------------------------------"<<endl;
+                        cin.clear();
+                        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                        employeesMenu(index);
+                        } 
+                    else {
+                            switch (choice5)
+                            {
+                            case 1:
+                            // update employee data
+                                  system("cls");
+                                  cout << "-------------------------------------"<<endl;
+                                  cout<<"Enter name: "<<endl;
+                                  cin >> updateName;
+                                  cout << "-------------------------------------"<<endl;
+                                  cout<<"Enter surname "<<endl;
+                                  cin >> updateSurname;
+                                  cout << "-------------------------------------"<<endl;
+                                  cout<<"Enter salary: "<<endl;
+                                  cin >> updateSalary;
+                                  if (updateSalary == 0){
+                                        system("cls");
+                                        cout << "-------------------------------------"<<endl;
+                                        cout<< "Wrong selection please try again!"<<endl;
+                                        cout << "-------------------------------------"<<endl;
+                                        cin.clear();
+                                        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                                        employeesMenu(index);
+                                        } 
+                                  else {
+                                          newCompany2->updateWorkerData(index, choice4-1, updateName,updateSurname,updateSalary);
+                                          out.open("data/company.csv");
+                                          out<<newCompany2;
+                                          out.close();
+                                          system("cls");
+                                          employeesMenu(index);
+                                  }
+                                  
+                                    
+                                    break;
+                            case 2:
+                                    /* delete employee*/
+                                    cout << "-------------------------------------"<<endl;
+                            cout << "Are you sure that you want to delete this employee ?"<<endl;
+                            cout<<"1. Yes"<<endl;
+                            cout<<"2. Go back"<<endl;
+                            int choice8;
+                            cin >> choice8;
+                            if (choice8 == 0){
+                                system("cls");
+                                cout << "-------------------------------------"<<endl;
+                                cout<< "Wrong selection please try again!"<<endl;
+                                cout << "-------------------------------------"<<endl;
+                                cin.clear();
+                                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                                employeesMenu(index);
+                                }
+                                 else {
+                                switch (choice8)
+                                {
+                                case 1:
+                                    newCompany2->deleteWorker(index,choice4-1);
+                                    out.open("data/company.csv");
+                                    out<<newCompany2; 
+                                    out.close();
+                                    employeesMenu(index);
+                                    
+                                    break;
+                                case 2:
+                                    employeesMenu(index);
+                                    break;
+                                
+                                default:
+                                    cout << "-------------------------------------"<<endl;
+                                    cout<< "Wrong selection please try again!"<<endl;
+                                    cout << "-------------------------------------"<<endl;
+                                    employeesMenu(index);
+                                    break;
+                                }
+                            } 
+                                    break;
+                            case 3:
+                                    system("cls");
+                                    employeesMenu(index);
+                                    break;
+                            
+                            default:
+                                system("cls");
+                                cout << "-------------------------------------"<<endl;
+                                cout<< "Wrong selection please try again!"<<endl;
+                                cout << "-------------------------------------"<<endl;
+                                employeesMenu(index);
+                                break;
+                            }
+                    }
+
+                }
                    break;
                 case 2:
                     /* adding new employee */
+                    system("cls");
                     cout << "-------------------------------------"<<endl;
                     cout<<" Enter employee's name: "<<endl;
                     cin >> name;
@@ -64,8 +191,10 @@ void employeesMenu(int index){
                         cout << "-------------------------------------"<<endl;
                         cin.clear();
                         cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
                         employeesMenu(index);}
                    else {
+                        
                         cout << "-------------------------------------"<<endl;
                         cout << "Choose type of employee: "<<endl;
                         cout << "-------------------------------------"<<endl;
@@ -97,6 +226,7 @@ void employeesMenu(int index){
                                         out.open("data/company.csv");
                                         out<<newCompany2;
                                         out.close();
+                                        system("cls");
                                         employeesMenu(index);
                                         break;
                                 case 2:
@@ -106,6 +236,7 @@ void employeesMenu(int index){
                                         out.open("data/company.csv");
                                         out<<newCompany2;
                                         out.close();
+                                        system("cls");
                                         employeesMenu(index);
                                         break;
                                 case 3:
@@ -118,13 +249,16 @@ void employeesMenu(int index){
                                         out.open("data/company.csv");
                                         out<<newCompany2;
                                         out.close();
+                                        system("cls");
                                         employeesMenu(index);
                                         break;
                                 
                                 default:
+                                        system("cls");
                                         cout << "-------------------------------------"<<endl;
                                         cout<< "Wrong selection please try again!"<<endl;
                                         cout << "-------------------------------------"<<endl;
+                                        employeesMenu(index);
                                         break;
                                 } }}
                     

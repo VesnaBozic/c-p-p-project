@@ -20,7 +20,7 @@ public:
     virtual string getType();
     virtual void write(ostream &output);
     virtual void details();
-    
+    virtual void changeWorker(string newName, string newSurname, double newSalary);
     virtual ~Seller();
 };
 

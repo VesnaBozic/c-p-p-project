@@ -21,4 +21,9 @@ void Storekeeper::write(ostream &output)
     
 };
 
+void Storekeeper::changeWorker(string newName, string newSurname, double newSalary){
+   
+      Worker::changeWorker(newName, newSurname, newSalary);
+}
+
 Storekeeper::~Storekeeper(){};

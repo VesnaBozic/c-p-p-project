@@ -49,5 +49,13 @@ void Worker::write(ostream &output){
     output<<"Worker"<<"#"<<getType()<<"#"<<name<<"#"<<surname<<"#"<<salary<<"#"<<deleted;
 };
 
+void Worker::changeWorker(string newName, string newSurname, double newSalary){
+        setName(newName);
+        setSurname(newSurname);
+        setSalary(newSalary);
+}
+
+
+
 
 Worker::~Worker(){};
