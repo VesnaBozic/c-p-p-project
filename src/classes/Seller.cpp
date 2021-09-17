@@ -1,7 +1,7 @@
 #include "Seller.hpp"
 
 Seller::Seller() : Worker(){};
-Seller::Seller(string name, string surname, double salary, string deleted, string cashRegister) : Worker(name, surname, salary, deleted), cashRegister(cashRegister){};
+Seller::Seller(string name, string surname, double salary, int holidayDays, string cashRegister) : Worker(name, surname, salary, holidayDays), cashRegister(cashRegister){};
 string Seller::getCashRegister()
 {
     return cashRegister;

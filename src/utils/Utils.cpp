@@ -7,6 +7,7 @@ ostream &operator<<(ostream &output, Company *company)
     return output;
 };
 
+
 vector<string> tokenization(string &line, string separator)
 {
     vector<string> parts;
@@ -52,27 +53,27 @@ istream &operator>>(istream &input, Company* &company)
         else if (type == "Department")
         {
             vector<string> parts = tokenization(line, "#");
-           if (parts[2]== "none"){
-               department = new Department(parts[0], parts[1], nullptr);
+           if (parts[1]== "none"){
+               department = new Department(parts[0], nullptr);
                company->addDepartment(department);
             }
-            else if(parts[4] == "Storekeeper"){
-               Worker *storekeeper = new Storekeeper(parts[5], parts[6],stod(parts[7]),parts[8]);  
-               department = new Department(parts[0], parts[1], storekeeper);
+            else if(parts[3] == "Storekeeper"){
+               Worker *storekeeper = new Storekeeper(parts[4], parts[5],stod(parts[6]),stoi(parts[7]));  
+               department = new Department(parts[0], storekeeper);
                company->addDepartment(department);
 
             }
-            else if (parts[4] == "Seller"){
+            else if (parts[3] == "Seller"){
             
-               Worker *seller = new Seller(parts[5], parts[6],stod(parts[7]),parts[8], parts[9]);  
-               department = new Department(parts[0],parts[1], seller);
+               Worker *seller = new Seller(parts[4], parts[5],stod(parts[6]),stoi(parts[7]), parts[8]);  
+               department = new Department(parts[0], seller);
                company->addDepartment(department); 
             }
-            else if (parts[4]== "Driver") {
+            else if (parts[3]== "Driver") {
 
               
-               Worker *driver = new Driver(parts[5], parts[6],stod(parts[7]),parts[8], parts[9],stoi(parts[10]));  
-               department = new Department(parts[0],parts[1], driver);
+               Worker *driver = new Driver(parts[4], parts[5],stod(parts[6]),stoi(parts[7]), parts[8],stoi(parts[9]));  
+               department = new Department(parts[0], driver);
                company->addDepartment(department);
             }
 
@@ -82,21 +83,21 @@ istream &operator>>(istream &input, Company* &company)
         {
            vector<string> parts = tokenization(line, "#");
                if(parts[0] == "Storekeeper"){
-               Worker *storekeeper = new Storekeeper(parts[1], parts[2],stod(parts[3]),parts[4]);  
+               Worker *storekeeper = new Storekeeper(parts[1], parts[2],stod(parts[3]),stoi(parts[4]));  
                department->hireWorker(storekeeper);
               
 
             }
             else if (parts[0] == "Seller"){
             
-               Worker *seller = new Seller(parts[1], parts[2],stod(parts[3]),parts[4], parts[5]);  
+               Worker *seller = new Seller(parts[1], parts[2],stod(parts[3]),stoi(parts[4]), parts[5]);  
                department->hireWorker(seller);
                
             }
             else if (parts[0]== "Driver") {
 
               
-               Worker *driver = new Driver(parts[1], parts[2],stod(parts[3]),parts[4], parts[5],stoi(parts[6]));  
+               Worker *driver = new Driver(parts[1], parts[2],stod(parts[3]),stoi(parts[4]), parts[5],stoi(parts[6]));  
                 department->hireWorker(driver);
             }
           

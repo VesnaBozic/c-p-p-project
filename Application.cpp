@@ -17,17 +17,17 @@ using namespace std;
 
 
 int main(){
-    Worker *driver = new Driver("Jovan", "Jovanovic",300.0, "no", "b",2);
-    Worker *storekeeper = new Storekeeper("Petar", "Petrovic",2400.0,"no");
-    Worker *seller = new Seller("Ana", "Anic", 400.0,"no", "kasa");
-    Worker *storekeeper2 = new Storekeeper("Nikola", "Nikolic",200.0,"no");
-    Worker *seller2 = new Seller("Igor", "Jovic", 400.0,"no", "kasa");
-    Worker *storekeeper3 = new Storekeeper("Stefan", "Stefanovic",200.0,"no");
+    Worker *driver = new Driver("Jovan", "Jovanovic",300.0, 0, "b",2);
+    Worker *storekeeper = new Storekeeper("Petar", "Petrovic",2400.0,0);
+    Worker *seller = new Seller("Ana", "Anic", 400.0,0, "kasa");
+    Worker *storekeeper2 = new Storekeeper("Nikola", "Nikolic",200.0,0);
+    Worker *seller2 = new Seller("Igor", "Jovic", 400.0,0, "kasa");
+    Worker *storekeeper3 = new Storekeeper("Stefan", "Stefanovic",200.0,0);
 
     Company *company = new Company("Name", "222","225");
     
-    Department *department = new Department("Department1","no", seller);
-    Department *department2 = new Department("Department2","no", storekeeper2);
+    Department *department = new Department("Department1", seller);
+    Department *department2 = new Department("Department2", storekeeper2);
     department->hireWorker(storekeeper2);
     department->hireWorker(seller);
     department2->hireWorker(driver);
@@ -51,15 +51,7 @@ int main(){
 
    
     
-    // Company *newCompany;
-    // ifstream file("data/company.csv");
-    // file >> newCompany;
-    // file.close();
-    // // newCompany->details();
-    // ofstream out2;
-    // out2.open("data/company2.csv");
-    // out2<<newCompany;
-    // out2.close();
+
    
     return 0;
 }

@@ -40,6 +40,7 @@ void departmentMenu(){
                 newCompany->departmentDetails();
                 cout<< "-------------------------------------"<<endl;
                 cout<< "Please choose department: "<<endl;
+                
                 int choice4;
                 cin >> choice4;
                 if (choice4 == 0){
@@ -196,7 +197,7 @@ void departmentMenu(){
                      cout << "-------------------------------------"<<endl;
                      cout<<" Enter department name: "<<endl;
                      cin >> departmentName;
-                     newDepartment = new Department(departmentName,"no", nullptr);
+                     newDepartment = new Department(departmentName, nullptr);
                      newCompany->addDepartment(newDepartment);
                      out.open("data/company.csv");
                      out<<newCompany;

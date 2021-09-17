@@ -1,7 +1,7 @@
 #include "Driver.hpp"
 
 Driver::Driver() : Worker(){};
-Driver::Driver(string name, string surname, double salary, string deleted, string category, int foulNumber) : Worker(name, surname, foulNumber, deleted), category(category), foulNumber(foulNumber){};
+Driver::Driver(string name, string surname, double salary, int holidayDays, string category, int foulNumber) : Worker(name, surname, foulNumber, holidayDays), category(category), foulNumber(foulNumber){};
 
 string Driver::getCategory()
 {

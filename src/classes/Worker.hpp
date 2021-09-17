@@ -10,17 +10,17 @@ protected:
     string name;
     string surname;
     double salary;
-    string deleted;
+    int holidayDays;
 
 public:
     Worker();
-    Worker(string name, string surname, double salary, string deleted);
+    Worker(string name, string surname, double salary, int holidayDays);
     string getName();
     void setName(string name);
     string getSurname();
     void setSurname(string surname);
-    string getDeleted();
-    void setObrisan(string deleted);
+    int getHolidayDays();
+    void setHolidayDays(int holidayDays);
 
     double getSalary();
     void setSalary(double salary);

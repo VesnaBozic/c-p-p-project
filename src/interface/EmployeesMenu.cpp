@@ -221,7 +221,7 @@ void employeesMenu(int index){
                                         cout << "-------------------------------------"<<endl;
                                         cout<<"Enter cash register for this seller: "<<endl;
                                         cin >> cashRegister;
-                                        newWorker = new Seller(name, surname, salary, "no", cashRegister);
+                                        newWorker = new Seller(name, surname, salary, 0, cashRegister);
                                         newCompany2->hireWorker(newWorker, index);
                                         out.open("data/company.csv");
                                         out<<newCompany2;
@@ -231,7 +231,7 @@ void employeesMenu(int index){
                                         break;
                                 case 2:
                                         /* adding storekeeper */
-                                        newWorker = new Storekeeper(name, surname, salary, "no");
+                                        newWorker = new Storekeeper(name, surname, salary, 0);
                                         newCompany2->hireWorker(newWorker, index);
                                         out.open("data/company.csv");
                                         out<<newCompany2;
@@ -244,7 +244,7 @@ void employeesMenu(int index){
                                         cout << "-------------------------------------"<<endl;
                                         cout<<"Enter driver's lincence category: "<<endl;
                                         cin >> category;
-                                        newWorker = new Driver(name, surname,salary,"no", category, 0);
+                                        newWorker = new Driver(name, surname,salary,0, category, 0);
                                         newCompany2->hireWorker(newWorker,index);
                                         out.open("data/company.csv");
                                         out<<newCompany2;

@@ -10,7 +10,7 @@ class Storekeeper : public Worker
    
 public:
     Storekeeper();
-    Storekeeper(string name, string surname, double salary, string deleted);
+    Storekeeper(string name, string surname, double salary, int holidayDays);
 
    
     virtual string getType();

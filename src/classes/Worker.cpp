@@ -1,7 +1,7 @@
 #include "Worker.hpp"
 
 Worker::Worker(){};
-Worker::Worker::Worker(string name, string surname, double salary, string deleted ="no") : name(name), surname(surname), salary(salary), deleted(deleted){};
+Worker::Worker::Worker(string name, string surname, double salary, int holidayDays =0) : name(name), surname(surname), salary(salary), holidayDays(holidayDays){};
 string Worker::getName()
 {
     return name;
@@ -28,12 +28,12 @@ void Worker::setSalary(double salary)
     this->salary = salary;
 };
 
-string Worker::getDeleted(){
-    return deleted;
+int Worker::getHolidayDays(){
+    return holidayDays;
 }
 
-void Worker::setObrisan(string deleted){
-    this->deleted = deleted;
+void Worker::setHolidayDays(int holidayDays){
+    this->holidayDays = holidayDays;
 }
 
 string Worker::getType()
@@ -46,7 +46,7 @@ void Worker::details(){
 }
 
 void Worker::write(ostream &output){
-    output<<"Worker"<<"#"<<getType()<<"#"<<name<<"#"<<surname<<"#"<<salary<<"#"<<deleted;
+    output<<"Worker"<<"#"<<getType()<<"#"<<name<<"#"<<surname<<"#"<<salary<<"#"<<holidayDays;
 };
 
 void Worker::changeWorker(string newName, string newSurname, double newSalary){

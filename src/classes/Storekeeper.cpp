@@ -1,7 +1,7 @@
 #include "Storekeeper.hpp"
 
 Storekeeper::Storekeeper() : Worker(){};
-Storekeeper::Storekeeper(string name, string surname, double salary, string deleted) : Worker(name, surname, salary, deleted){};
+Storekeeper::Storekeeper(string name, string surname, double salary, int holidayDays) : Worker(name, surname, salary, holidayDays){};
 
 
 string Storekeeper::getType()
